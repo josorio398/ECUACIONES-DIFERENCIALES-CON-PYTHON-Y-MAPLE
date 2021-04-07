@@ -5,7 +5,7 @@
 
 [1. Sistema masa resorte en Maple](https://maple.cloud/app/5742518037118976/Sistema+masa+resorte+en+Maple)
 
-[2. Circuito RLC en serie en Maple](https://github.com/josorio398/ECUACIONES-DIFERENCIALES-CON-PYTHON/blob/main/Circuito%20RLC%20en%20serie%20en%20Maple.pdf)
+[2. Circuito RLC en serie en Maple](https://maple.cloud/app/6135934638096384/Circuito+RLC+en+serie+en+Maple)
 
 [3. Ecuaciones diferenciales de Cauchy euler dos por dos en Maple](https://maple.cloud/app/5042090622320640/Ecuaci%C3%B3n+diferencial+de+Cauchy+euler+dos+por+dos)
 
