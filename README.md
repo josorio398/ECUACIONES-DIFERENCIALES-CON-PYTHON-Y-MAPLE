@@ -18,3 +18,5 @@
 [7. Método de variación de parametros dos por dos en Maple](https://maple.cloud/app/6343251031752704/M%C3%A9todo+de+variaci%C3%B3n+de+parametros+dos+por+dos+en+Maple)
 
 [8. Método de variación de parametros tres por tres en Maple](https://maple.cloud/app/6313863846297600/Metodo+de++variacion+de+parametros+tres+por+tres+en+Maple)
+
+[9. Sistema masa resorte con transformada de laplace en Maple](https://maple.cloud/app/6361663623659520/Sistema+masa+resorte+con+transformada+de+laplace+en+Maple)
