@@ -9,3 +9,5 @@
 
 [2. Circuito RLC en serie en Maple](https://maple.cloud/app/5042090622320640/Ecuaci%C3%B3n+diferencial+de+Cauchy+euler+dos+por+dos)
 
+
+
