@@ -9,5 +9,7 @@
 
 [3. Ecuaciones diferenciales de Cauchy euler dos por dos en Maple](https://maple.cloud/app/5042090622320640/Ecuaci%C3%B3n+diferencial+de+Cauchy+euler+dos+por+dos)
 
+[4. Circuito RC en Maple](https://maple.cloud/app/4759069646127104/Circuito+RC+en+Maple)
+
 
 
