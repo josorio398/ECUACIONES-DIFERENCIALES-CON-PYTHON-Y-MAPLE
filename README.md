@@ -15,5 +15,5 @@
 
 [5. Problema de mezclas en Maple](https://maple.cloud/app/6661919351504896/Problema+de+mezclas+en+Maple)
 
-
+[6. Método de variación de parametros dos por dos en Maple](https://maple.cloud/app/6343251031752704/M%C3%A9todo+de+variaci%C3%B3n+de+parametros+dos+por+dos+en+Maple)
 
