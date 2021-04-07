@@ -3,5 +3,5 @@
 
 ## TABLA DE CONTENIDO
 
-[1. Sistema masa resorte en Python](https://github.com/josorio398/ECUACIONES-DIFERENCIALES-CON-PYTHON/blob/main/sistema%20masa%20resorte%20en%20Maple.pdf)
+[1. Sistema masa resorte en Maple](https://github.com/josorio398/ECUACIONES-DIFERENCIALES-CON-PYTHON/blob/main/sistema%20masa%20resorte%20en%20Maple.pdf)
 
