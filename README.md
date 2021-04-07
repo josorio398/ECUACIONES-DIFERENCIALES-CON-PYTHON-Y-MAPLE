@@ -5,3 +5,5 @@
 
 [1. Sistema masa resorte en Maple](https://github.com/josorio398/ECUACIONES-DIFERENCIALES-CON-PYTHON/blob/main/sistema%20masa%20resorte%20en%20Maple.pdf)
 
+[2. Circuito RLC en serie en Maple](https://github.com/josorio398/ECUACIONES-DIFERENCIALES-CON-PYTHON/blob/main/sistema%20masa%20resorte%20en%20Maple.pdf)
+
