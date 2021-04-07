@@ -13,3 +13,7 @@
 
 [5. Ley de enfriamiento de Newton en Maple](https://maple.cloud/app/6375040823590912/Ley+de+enfriamiento+de+Newton+en+Maple)
 
+[5. Problema de mezclas en Maple](https://maple.cloud/app/6661919351504896/Problema+de+mezclas+en+Maple)
+
+
+
