@@ -10,7 +10,9 @@ Para utilizar el módulo de graficación **plotvectors** debe importarlo de la s
 ```python
 pip install PlotLinearAlgebra
 ```
-
+```python
+from PlotLinearAlgebra.plotvectors import *
+```
 
 ### Development Installation
 
