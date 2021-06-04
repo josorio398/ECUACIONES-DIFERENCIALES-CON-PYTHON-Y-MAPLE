@@ -1,11 +1,16 @@
 
-# Linnea
+# Descripción general
 
-Linnea is an experimental tool for the automatic generation of optimized code for linear algebra problems. It is developed at the [High-Performance and Automatic Computing group](http://hpac.rwth-aachen.de) at RWTH Aachen University.
+Este módulo contiene algunas herramientas para la representación gráfica de vectores en el plano y en el espacio, diseñado para un curso de álgebra lineal con aplicaciones, contiene funciones para graficar vectores con punto inicial y punto final dado, o anclados en el origen, para su realización se utilizó la librería de graficación interactiva **Plotly** y la librería de arreglos multidimensionales **NumPy**, es compatible con vectores construidos como matriz columna en la librería **SymPy**. Puede servir como herramienta de visualización, para validar el conocimiento por parte de los estudiantes y para la resolución de problemas relacionados con conceptos vectoriales.
 
-## Installation
+## Instalación
 
-Linnea requires Python 3.6 and can be installed with `pip install git+git://github.com/HPAC/linnea.git`. (Depending on your setup, you may have to use `pip3` instead of `pip`.) To uninstall Linnea, use `pip uninstall linnea`. This also removes the commandline tool.
+Para utilizar el módulo de graficación **plotvectors** debe importarlo de la siguiente manera:
+
+```python
+pip install PlotLinearAlgebra
+```
+
 
 ### Development Installation
 
