@@ -61,10 +61,11 @@ Q = (2,12)
 plotvectors2D([4,6],[6],A,B,C,D,[P,Q],[P,A],[P,C],[(7,2),C],[(-4,12),D],[8,"300"],[(4,-6.928),6,"90"]) 
 ```
 
-
-
 ### plotvectors3D
 
+Permite visualizar multiples vectores en el espacio tridimensional, que pueden tener un punto inicial y un punto final dado, estar anclados en el origen del espacio,
+o vectores equipolentes a otro que inicie en un punto dado (traslación de vectores), y vectores desde una magnitud y un vector director unitario dado, acepta como 
+argumentos vectores columna tridimensionales definidos en la librería SymPy.
 
 
 
