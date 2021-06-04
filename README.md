@@ -36,7 +36,7 @@ A continuación  se presenta la sintaxis adecuada para el manejo de esta funció
 
 * `plotvectors2D([P,Q])` permite graficar un vector con punto inicial `P = (x1,y1)` y punto final `Q = (x2,y2)`.
 
-* `plotvectors2D([P,V])` permite graficar un vector equipolente a un vector definido como: `V = [x,y]`, `V = [x]`, `V = Matrix([x,y])` o `V = Matrix([x])` con punto inicial en `P = (x0,y0)`
+* `plotvectors2D([P,V])` permite graficar un vector equipolente a un vector definido como: `V = [x,y]`, `V = [x]`, `V = Matrix([x,y])` o `V = Matrix([x])` con punto inicial en `P = (x0,y0)`.
 
 * `plotvectors2D([a,"b"])` permite graficar un vector con magnitud `a` y ángulo en grados respecto al eje x positivo `b`.
 
@@ -67,115 +67,45 @@ Permite visualizar multiples vectores en el espacio tridimensional, que pueden t
 o vectores equipolentes a otro que inicie en un punto dado (traslación de vectores), y vectores desde una magnitud y un vector director unitario dado, acepta como 
 argumentos vectores columna tridimensionales definidos en la librería SymPy.
 
+* `plotvectors3D([x,y])` permite graficar un vector con punto inicial `(0,0,0)` y punto final `(x,y,z)`.
 
+* `plotvectors3D(V)` permite graficar un vector definido como `V = [x,y,z]` o en la librería **sympy** como `V = Matrix([x,y,z])`.
 
+* `plotvectors3D([P,Q])` permite graficar un vector con punto inicial `P = (x1,y1,z1)` y punto final `Q = (x2,y2,z2)`.
 
-## Usage
+* `plotvectors3D([P,V])` permite graficar un vector equipolente al vector  definido como `V = [x,y,z]` o  `V = Matrix([x,y,z])` con punto inicial en `P = (x0,y0,z0)`.
 
-Linnea can be used in two different ways.
+* `plotvectors3D([a,U])` permite graficar un vector con magnitud `a` y vector director unitario definido como `U = [x,y,z]` o `U = Matrix([x,y,z])`.
 
-### Python Module
+* `plotvectors3D([P,a,U])` permite graficar un vector con punto inicial en `P = (x0,y0,z0)`, magnitud `a` y vector director unitario definido como `U = [x,y,z]` o `U = Matrix([x,y,z])`.
 
-At the moment, Linnea is primarily a Python module. An example script for how to use Linnea within Python can found in `examples/run_linnea.py`. The input expressions are represented as Python objects. As an example, consider the description of a lower triangular linear system (omitting imports):
+* `plotvectors3D ([v1],[v2],...,[v3])` permite graficar múltiples vectores en el espacio definidos de diferente forma.
+
+Como ejemplo, podemos presentar el siguiente código donde A,B se define como vectores, i,j,k como vectores unitario y P y Q como puntos:
 
 ```python
-n = 1000
+from sympy import Matrix
 
-L = Matrix("L", (n, n))
-L.set_property(properties.LOWER_TRIANGULAR)
-L.set_property(properties.FULL_RANK)
-x = Vector("x", (n, 1))
-y = Vector("y", (n, 1))
+A = Matrix([6,2,3])
+B = [3,4,5]
 
-input = Equations(Equal(y, Times(Inverse(L), x)))
+P = (-4,2,3)
+Q = (5,4,6)
+
+i = [1,0,0]
+j = [0,1,0]
+K = [0,0,1]
+
+norm = A.norm()
+norm
+
+U = (1/norm)*A
+U
+
+plotvectors3D([1,2,3],B,A, [P,Q],[P,B],[(6,3,5),A],[(1,-2,3),(5,-4,-6)],[3,i],[(1,2,3),3,j],[5,K],[(4,5,6),8,U])
 ```
 
-Further examples of input problems are provided in the `examples/inputX.py` files.
+## Colaboradores
 
-Options can be set with a number of `linnea.config.set_X()` functions.
+* Jhonny Osorio Gallego
 
-### Commandline Tool
-
-When installing Linnea via `pip`, the commandline tool `linnea` is installed. As input, it takes a description of the input problem in a simple custom language. With this language, the same lower triangular system is described as:
-
-```
-n = 1000
-
-Matrix L(n, n) <LowerTriangular, FullRank>
-ColumnVector x(n) <>
-ColumnVector y(n) <>
-
-y = inv(L)*x
-```
-
-Further examples are provided in `examples/inputX.la`. Notice that the primary purpose of this input format is to make it slightly easier to try out Linnea. There are no plans to establish this as an actual language. New features will probably not be immediately available in this language, and the language may change in the future without being backward compatible.
-
-The list of commandline options is available via `linnea -h`.
-
-### Output
-
-As output, Linnea generates a directory structure that contains code files, as well a file containing a description of the derivation graph, the primary datastructure used by Linnea. Which files are generated can be set as options. Likewise, the location of the output can be specified. By default, it is the current directory.
-
-For the linear system from the previous examples, the following code will be generated:
-
-```julia
-using LinearAlgebra.BLAS
-using LinearAlgebra
-
-function algorithm0(ml0, ml1)
-    # cost 1e+06
-    # L: ml0, full, x: ml1, full
-    # tmp1 = (L^-1 x)
-    trsv!('L', 'N', 'N', ml0, ml1)
-
-    # tmp1: ml1, full
-    # y = tmp1
-    return (ml1)
-end
-```
-
-### Options
-
-Linnea offers a number of options which can be set through `linnea.config` in Python or as commandline options for the commandline tool. Alternatively, all options can also be specified in a `linnea_config.json` file (see `examples`) which has to be located in the same directory where Linnea is run, or at the user's `$HOME` folder. Both commandline options and `linnea.config` options override what is specified in `linnea_config.json`. As a fallback, reasonable default values are used.
-
-There are the following options (those are the names used in Python, the commandline options have slightly different names. See `linnea -h`):
-
-* `output_code_path` The output of Linnea will be stored in this directory. The default is the current directory.
-
-* `output_name` Linnea creates a new directory that contains all output files. This is the name of this directory. The default is `tmp`.
-
-* `language` Not available for the commandline tool. For now, the only allowed option is `Julia`.
-
-* `julia_data_type` The data type used in the generated code. Either `Float32` or `Float64`. The default is `Float64`.
-
-* `merging_branches` Whether or not to merge branches in the derivation graph. The default is `true`.
-
-* `dead_ends` Whether or not to eliminate dead ends in the derivation graph early. The default is `true`.
-
-* `algorithms_limit` The upper limit for the number of algorithms that are written to files. The default is `100`.
-
-* `strategy` The strategy used to find algorithms. Either `constructive` or `exhaustive`. The default is `constructive`.
-
-* `generate_graph` Whether or not to generate a `.gv` file of the derivation graph. The default is `false`.
-
-* `graph_style` Style of the derivation graph. Either `full`, `simple`, or `minimal`. The default is `full`. Only applies if `generate_graph` is set to `True`.
-
-* `generate_derivation` Whether or not to generate a description of how the algorithms were derived. The default is `false`.
-
-* `generate_code` Whether or not to generate the actual code of the algorithms. The default is `true`.
-
-* `generate_experiments` Whether or not to generate code that can be used to run the algorithms. The default is `false`.
-
-* `verbosity` Level of verbosity. The default is `1`.
-
-## Publications
-
-A number of publications that discuss different aspects of Linnea can be found [here](http://hpac.rwth-aachen.de/publications/author/Barthels).
-
-## Contributors
-
-* Henrik Barthels
-* Marcin Copik
-* Diego Fabregat Traver
-* Julius Hohnerlein
-* Manuel Krebber
