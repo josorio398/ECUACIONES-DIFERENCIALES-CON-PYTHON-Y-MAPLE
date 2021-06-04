@@ -16,11 +16,15 @@ from PlotLinearAlgebra.plotvectors import *
 
 ## Funciones
 
-El submódulo **plotvectors** contiene las funciones **plotvectors2D** que permite realizar la visualización de vectores en el plano cartesiano y **plotvectors3D** que permite la visualización de vectores en el espacio tridimensional, para definir puntos en estos módulos se usarán los objetos tipo tupla, por ejemplo el punto  `P =(x,y)` o `P =(x,y,z)` y para definir vectores se usarán listas, por ejemplo el vector unidimensional `V =[x]`, bidimensional `V =[x,y]` o tridimensional `V =[x,y,z]`,  también podemos definir vectores como una matriz columna, haciendo uso de la librería sympy, de la forma `V =Matrix([x])`, `V =Matrix([x,y])` o `V =Matrix([x,y,z])` dependiendo de la dimensión del vector.
+El submódulo **plotvectors** contiene las funciones **plotvectors2D** que permite realizar la visualización de vectores en el plano cartesiano y **plotvectors3D** que 
+permite la visualización de vectores en el espacio tridimensional, para definir puntos en estos módulos se usarán los objetos tipo tupla, por ejemplo el punto  
+`P =(x,y)` o `P =(x,y,z)` y para definir vectores se usarán listas, por ejemplo el vector unidimensional `V =[x]`, bidimensional `V =[x,y]` o tridimensional `V =[x,y,z]`,  también podemos definir vectores como una matriz columna, haciendo uso de la librería sympy, de la forma `V =Matrix([x])`, `V =Matrix([x,y])` o `V =Matrix([x,y,z])` 
+dependiendo de la dimensión del vector.
 
 ### plotvectors2D
 
-Permite visualizar múltiples vectores en el plano cartesiano, que pueden tener un punto inicial y un punto final dado, estar anclados en el origen del plano, o vectores equipolentes a otro que inicie en un punto dado (traslación de vectores), y vectores en forma polar anclados en el origen o con un punto inicial dado, acepta como argumentos vectores unidimensionales o bidimensionales definidos como matriz columna en la librería SymPy.
+Permite visualizar múltiples vectores en el plano cartesiano, que pueden tener un punto inicial y un punto final dado, estar anclados en el origen del plano, o vectores equipolentes a otro que inicie en un punto dado (traslación de vectores), y vectores en forma polar anclados en el origen o con un punto inicial dado, acepta como 
+argumentos vectores unidimensionales o bidimensionales definidos como matriz columna en la librería SymPy.
 
 A continuación  se presenta la sintaxis adecuada para el manejo de esta función:
 
@@ -40,13 +44,11 @@ A continuación  se presenta la sintaxis adecuada para el manejo de esta funció
 
 * `plotvectors2D([v1],[v2],...,[v3])` permite graficar múltiples vectores en el plano definidos de diferente forma.
 
+### plotvectors3D
 
 
-## Overview
 
-Linnea is a prototype of a compiler/program synthesis tool that automates the translation of the mathematical description of a linear algebra problem to an efficient sequence of calls to BLAS and LAPACK kernels. The main idea of Linnea is to construct a search graph that represents a large number of programs, taking into account knowledge about linear algebra, numerical linear algebra and high-performance computing. The algebraic nature of the domain is used to reduce the size of the search graph, without reducing the size of the search space that is explored.
 
-The input to Linnea are linear algebra expressions. As operands, matrices, vectors and scalars are supported. Operands can be annotated with properties, such as 'lower triangular' or 'symmetric'. Supported operations are addition, multiplication, transposition and inversion. At the moment, Linnea generates Julia code (see https://julialang.org), using BLAS and LAPACK wrappers whenever possible.
 
 ## Usage
 
